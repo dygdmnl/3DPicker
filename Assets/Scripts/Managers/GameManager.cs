@@ -1,16 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using Enums;
+using Signals;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     #region Self Variables
+
     #region Serialized Variables
 
     [SerializeField] private GameStates states;
 
     #endregion
+
     #endregion
+
 
     private void Awake()
     {
@@ -27,20 +30,19 @@ public class GameManager : MonoBehaviour
         CoreGameSignals.Instance.onChangeGameState += OnChangeGameState;
     }
 
-    private void UnSubscribeEvents()
+    private void UnsubscribeEvents()
     {
         CoreGameSignals.Instance.onChangeGameState -= OnChangeGameState;
     }
 
     private void OnDisable()
     {
-        UnSubscribeEvents();
+        UnsubscribeEvents();
     }
 
-    //[Button(name:"Change State")]
-
+    //[Button("Change State")]
     private void OnChangeGameState(GameStates state)
     {
         states = state;
     }
-}  
+}
