@@ -1,14 +1,19 @@
+using Controllers.Player;
 using Enums;
+using Extensions;
 using Signals;
+using TMPro;
 using UnityEngine;
 
 namespace Managers
 {
-    public class UIManager : MonoBehaviour
+    public class UIManager : MonoSingleton<UIManager>
     {
         #region Self Variables
 
         #region Public Variables
+
+        public TextMeshProUGUI RewardText;
 
         #endregion
 
@@ -57,6 +62,7 @@ namespace Managers
         private void OnLevelSuccessful()
         {
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Win, 2);
+            CoreGameSignals.Instance.onupdateposion?.Invoke();
         }
 
         private void OnLevelFailed()

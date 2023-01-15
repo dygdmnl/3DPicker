@@ -1,7 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Controllers.Pool;
 using DG.Tweening;
 using Managers;
 using Signals;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Controllers.Player
@@ -9,6 +14,14 @@ namespace Controllers.Player
     public class PlayerPhysicsController : MonoBehaviour
     {
         #region Self Variables
+
+        #region Public Variables
+
+        public TextMeshPro posiontext;
+        public List<GameObject> RewardInTrigger;
+        public int posions;
+
+        #endregion
 
         #region Serialized Variables
 
@@ -49,9 +62,27 @@ namespace Controllers.Player
                 return;
             }
 
+
             if (other.CompareTag("MiniGame"))
             {
-                //Write Mini Game Conditions
+                CoreGameSignals.Instance.onMinigameAreaEntered?.Invoke();
+            }
+
+            if (other.CompareTag("Posion"))
+            {
+                RewardInTrigger.Add(other.gameObject);
+                posions += int.Parse(other.gameObject.name);
+                Debug.Log("Posion:" + posions);
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.transform.tag == "Posion")
+            {
+                RewardInTrigger.Remove(other.gameObject);
+                posions -= int.Parse(other.gameObject.name);
+
+
             }
         }
 
@@ -66,5 +97,12 @@ namespace Controllers.Player
         internal void OnReset()
         {
         }
+
+        internal void UpdatePosion()
+        {
+            UIManager.Instance.RewardText.text = posions.ToString();
+        }
+
     }
+
 }

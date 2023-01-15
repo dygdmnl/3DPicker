@@ -8,6 +8,7 @@ TagManager:
   - PoolArea
   - Collectable
   - MiniGame
+  - Posion
   layers:
   - Default
   - TransparentFX

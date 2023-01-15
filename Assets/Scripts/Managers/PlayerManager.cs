@@ -77,6 +77,8 @@ namespace Managers
             CoreGameSignals.Instance.onFinishAreaEntered += OnFinishAreaEntered;
             CoreGameSignals.Instance.onStageAreaSuccessful += OnStageAreaSuccessful;
             CoreGameSignals.Instance.onReset += OnReset;
+            CoreGameSignals.Instance.onMinigameAreaEntered += OnMinigameAreaEntered;
+            CoreGameSignals.Instance.onupdateposion += Onupdateposion;
         }
 
         private void UnSubscribeEvents()
@@ -91,6 +93,9 @@ namespace Managers
             CoreGameSignals.Instance.onFinishAreaEntered -= OnFinishAreaEntered;
             CoreGameSignals.Instance.onStageAreaSuccessful -= OnStageAreaSuccessful;
             CoreGameSignals.Instance.onReset -= OnReset;
+            CoreGameSignals.Instance.onMinigameAreaEntered -= OnMinigameAreaEntered;
+            CoreGameSignals.Instance.onupdateposion -= Onupdateposion;
+
         }
 
         private void OnDisable()
@@ -154,5 +159,15 @@ namespace Managers
             meshController.OnReset();
             physicsController.OnReset();
         }
+
+        private void Onupdateposion()
+        {
+            physicsController.UpdatePosion();
+        }
+        private void OnMinigameAreaEntered()
+        {
+
+        }
+            
     }
 }

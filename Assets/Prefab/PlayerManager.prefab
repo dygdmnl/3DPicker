@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d8fd7f1cb74834879049eb7de2a81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posiontext: {fileID: 0}
+  RewardInTrigger: []
+  posions: 0
   manager: {fileID: 205884047297280289}
   collider: {fileID: 205884046871737277}
   rigidbody: {fileID: 205884046871737266}

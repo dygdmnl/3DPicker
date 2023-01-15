@@ -203,10 +203,10 @@ Material:
     - _CloudHeight: -0.185
     - _Clouds: 1
     - _CloudsCat: 1
-    - _CloudsHeight: 0.2
+    - _CloudsHeight: -0.463
     - _CloudsIntensity: 1
     - _CloudsLitbySun: 0
-    - _CloudsRotation: 160
+    - _CloudsRotation: 195
     - _CloudsRotationSpeed: 1
     - _ColorsCat: 1
     - _Contrast: 2
@@ -238,7 +238,7 @@ Material:
     - _EnableSunMoonMask: 1
     - _EnableTwinkling: 1
     - _EqHeight: 0.419
-    - _EquatorHeight: 0.5
+    - _EquatorHeight: 0.402
     - _EquatorSmoothness: 0.7
     - _Exposure: 0
     - _Fade: 0
@@ -284,7 +284,7 @@ Material:
     - _StarsAmount: 3
     - _StarsCat: 1
     - _StarsFlikerContrast: 1
-    - _StarsHeightMask: 0.2
+    - _StarsHeightMask: 0
     - _StarsHeigntMask: 1
     - _StarsHorizonMask: 1
     - _StarsIntensity: 3
@@ -292,7 +292,7 @@ Material:
     - _StarsMaskPower: 1
     - _StarsRotation: 360
     - _StarsRotationSpeed: 0.5
-    - _StarsSize: 0.6
+    - _StarsSize: 0.628
     - _StarsSunMask: 0.02
     - _SunCat: 1
     - _SunIntensity: 2
